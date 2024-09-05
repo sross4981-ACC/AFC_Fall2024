@@ -30,8 +30,13 @@
                 </select>
                 <br>
             Age: <input type="number" name="age" id="" required min="21" max="99">
-            Phone Number: <input type="tel" name="phone" id="" placeholder="321-123-4567" maxlength="12" minlength="12"  pattern="^(?:\+1|1)?[-.\s]?\(?[2-9]\d{2}\)?[-.\s]?\d{3}[-.\s]?\d{4}$">
+            Phone Number: <input type="tel" name="phone" id="" placeholder="321-123-4567" maxlength="12" minlength="12" required  pattern="^(?:\+1|1)?[-.\s]?\(?[2-9]\d{2}\)?[-.\s]?\d{3}[-.\s]?\d{4}$">
             Email: <input type="email" name="email" id="" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+            <br>
+            <br>
+            All passwords must consist of an 8-12 character pattern which includes at least one number, one special symbol, one uppercase character and one lowercase character.
+<br>    
+
             Password for account: <input type="password" name="password" id="" minlength="8" maxlength="12" 
                 required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
             <br>
