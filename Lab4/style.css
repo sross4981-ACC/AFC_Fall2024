@@ -1,0 +1,77 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+nav {
+    font-family: "Crimson Text", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+h1 {
+    font-family: "Crimson Text", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+  }
+  #fontAwesome{
+    text-align: center;
+    color: black;
+    font-size: larger;
+  }
+  /* body{
+    background-image: url("assests/image-4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  } */
+ #card_picture{
+  width: 40vw;
+  object-fit: cover;
+ } 
+ .form-group{
+  color:Black;
+ }
+.mt-5#menuCard{
+  background-color: red;
+
+}
+body {
+  height: 150vh;
+  background: 
+      linear-gradient(rgba(253, 249, 249, 0.5), rgba(0, 0, 0, 0.5)), /* Overlay gradient */
+      url('assests/image-4.jpg'); /* Background image */
+  background-size: cover; /* Cover the entire area */
+  background-repeat: no-repeat;
+  background-position: center; /* Center the image */
+  
+}
+
+body#hiringbody {
+  height: 150vh;
+  background: 
+      linear-gradient(rgba(253, 249, 249, 0.5), rgba(255, 255, 255, 0.5)), /* Overlay gradient */
+      url('assests/image-4.jpg');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+}
+
+p#crazyfun{
+  margin-top: 150px;
+  text-align: center;
+}
+#menu{
+  text-align: center;
+  margin-top: 5vh;
+  font-size: xx-large;
+}
+#menuCard {
+  margin-bottom: 40px;
+}
+#form{
+  background-color: aliceblue;
+  padding-bottom: 10vh;
+  padding-top: 5px;
+}
+#nowHiring{
+  text-align: center;
+  margin-top: 5vh;
+}

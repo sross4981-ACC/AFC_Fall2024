@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Now Hiring @ Tusk's</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body id="hiringbody">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="index.html">
+                <img src="assests/mammoth.jpg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+               Tusk's Steakhouse 
+              </a>
+            </div>
+          </nav>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="menu.html">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="hiring.html">Now Hiring</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <h1 id="nowHiring">Now Hiring</h1>
+
+   <div class="container" id="form"> 
+    <div class="container mt-5">
+        <form id="hiring">
+            <div class="form-group">
+                <label for="fname">First Name:</label>
+                <input type="text" class="form-control rounded" name="fname" id="fname" required minlength="1" maxlength="20">
+            </div>
+    
+            <div class="form-group">
+                <label for="lname">Last Name:</label>
+                <input type="text" class="form-control rounded" name="lname" id="lname" minlength="1" maxlength="20">
+            </div>
+    
+            <div class="form-group">
+                <label for="address">Main Address:</label>
+                <input type="text" class="form-control" name="address" id="address" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="2address">Secondary Address:</label>
+                <input type="text" class="form-control" name="2address" id="2address">
+            </div>
+    
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" class="form-control" name="city" id="city" maxlength="30">
+            </div> 
+    
+            <div class="form-group">
+                <label for="state">State:</label>
+                <select class="form-control" name="state" id="state">
+                    <option value="TX">TX</option>
+                    <option value="FL">FL</option>
+                    <option value="CA">CA</option>
+                </select>
+            </div> 
+    
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" class="form-control" name="age" id="age">
+            </div>
+    
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" class="form-control" name="phone" id="phone" placeholder="321-123-4567">
+            </div>
+    
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" name="email" id="email"pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/">
+            </div>
+    
+            <div class="form-group">
+                <label>Password for account:</label>
+                <small class="form-text text-muted">All passwords must consist of an 8-12 character pattern which includes at least one number, one special symbol, one uppercase character, and one lowercase character.</small>
+                <input type="password" class="form-control" name="password" id="password" minlength="8" maxlength="12" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+            </div> 
+    
+            <div class="form-group">
+                <label>Marital Status:</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="married" id="married_yes" value="yes">
+                    <label class="form-check-label" for="married_yes">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="married" id="married_no" value="no" checked>
+                    <label class="form-check-label" for="married_no">No</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="married" id="married_complicated" value="complicated">
+                    <label class="form-check-label" for="married_complicated">It's complicated</label>
+                </div>
+            </div> 
+    
+            <div class="form-group">
+                <label>Favorite Color:</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="color_red" id="color_red">
+                    <label class="form-check-label" for="color_red">Red</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="color_yellow" id="color_yellow">
+                    <label class="form-check-label" for="color_yellow">Yellow</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="color_blue" id="color_blue">
+                    <label class="form-check-label" for="color_blue">Blue</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="color_green" id="color_green">
+                    <label class="form-check-label" for="color_green">Green</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="color_purple" id="color_purple">
+                    <label class="form-check-label" for="color_purple">Purple</label>
+                </div>
+            </div> 
+    
+            <div class="form-group">
+                <label for="moreInfo">More Info:</label>
+                <textarea class="form-control" name="moreInfo" id="text" cols="30" rows="4"></textarea>
+                <div id="charCount" class="mt-2">30 Characters remaining</div>
+            </div>
+    
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+        </form>
+    </div>
+   </div>
+
+
+
+
+
+  <p id="crazyfun">All data is immeditaly sold to fund Tibeaten independence!</p>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="script_hiring.js"></script>
+  </body>
+</html>
