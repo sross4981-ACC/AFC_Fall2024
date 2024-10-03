@@ -1,0 +1,25 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+#diceHolder {
+  display: flex;
+  font-size: 9em;
+  gap: 1em;
+}
+
+body {
+  background-image: url('./assets/highRoller.jpg');
+  background-size: cover;
+  background-position: right;
+  height: 100vh;
+}
+
+#background {
+  background-color: #339C5E;
+  padding: 10px;
+
+}
