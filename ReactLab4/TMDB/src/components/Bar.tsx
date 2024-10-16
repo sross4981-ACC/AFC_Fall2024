@@ -67,38 +67,26 @@ export default function Bar() {
     if (event.key === 'Enter'){
     console.log("running Search: ", searchData);
     setSearchData("");
+    import axios from 'axios';
 
-const options = {
-  method: 'GET',
-  url: 'https://api.themoviedb.org/3/discover/movie',
-  params: {
-    query: searchData,
-    include_adult: 'false',
-    include_video: 'false',
-    language: 'en-US',
-    page: '1',
-    sort_by: 'popularity.desc'
-  },
-  headers: {
-    accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4Y2MzZGE2OTVmYTM3MmI3YmU4ZjQxMTAyMGZmYzNkZiIsIm5iZiI6MTcyODMxNDI0MS4xNzI0NDYsInN1YiI6IjY2ZmQ1NzRhYmFlMzgzYzEwY2QwNzdkYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Ud2dX-zdlo-2yS9o1kybcFvjje443_8fWLQSGZz9ywc'
-  }
-};
-
-axios
-  .request(options)
-  .then(function (response) {
-    console.log(response.data);
-    let movieArray = response.data.results.map((movie:object) => {
-      return <MovieCard movie={movie}/>
-    })
-    setMovies(movieArray)
-  })
-  .catch(function (error) {
-    console.error(error);
-  });
-    }
-  }
+    const options = {
+      method: 'GET',
+      url: 'https://api.themoviedb.org/3/search/movie',
+      params: {query: searchData, include_adult: 'false', language: 'en-US', page: '1'},
+      headers: {
+        accept: 'application/json',
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4Y2MzZGE2OTVmYTM3MmI3YmU4ZjQxMTAyMGZmYzNkZiIsIm5iZiI6MTcyOTA5NzY1MC4yMTQwNjYsInN1YiI6IjY2ZmQ1NzRhYmFlMzgzYzEwY2QwNzdkYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.IBIAk_bcWwJBT6Q9kB_g1SiJXM5XRF0vBS4IYmakoPk'
+      }
+    };
+    
+    axios
+      .request(options)
+      .then(function (response) {
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" sx={{width: '100%'}}>

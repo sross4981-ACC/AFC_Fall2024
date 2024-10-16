@@ -24,7 +24,7 @@ function App() {
     .then(function (response) {
       setNowPlaying(response.data.results)
       console.log(nowPlaying)
-      let movieArray = response.data.results.map((props) => {
+      let movieArray = response.data.results.map((props:any) => {
         return <MovieCard movie={props}/>
       })
       setNowPlaying(movieArray)
@@ -38,7 +38,7 @@ function App() {
 
   return (
     <>
-    <ThemeProvider theme={createTheme}></ThemeProvider>
+    {/* <ThemeProvider theme={createTheme}></ThemeProvider> */}
     <Bar />
     <button type='submit' onClick={handleClick}>Now Playing</button>
     <div id='movie-container'>
