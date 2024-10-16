@@ -101,7 +101,7 @@ axios
   }
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="fixed" sx={{width: '100%'}}>
         <Toolbar>
           <IconButton
             size="large"
