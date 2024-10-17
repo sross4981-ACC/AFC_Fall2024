@@ -67,7 +67,6 @@ export default function Bar() {
     if (event.key === 'Enter'){
     console.log("running Search: ", searchData);
     setSearchData("");
-    import axios from 'axios';
 
     const options = {
       method: 'GET',
@@ -87,6 +86,8 @@ export default function Bar() {
       .catch(function (error) {
         console.error(error);
       });
+    }
+  }
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" sx={{width: '100%'}}>
