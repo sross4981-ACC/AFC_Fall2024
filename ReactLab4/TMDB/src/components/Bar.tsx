@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import * as React from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -7,10 +6,9 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-import axios from 'axios';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import MovieCard from './MovieCard'
+import { useNavigate } from 'react-router-dom';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -56,36 +54,17 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function Bar() {
   const [searchData, setSearchData] = useState("")
-  const [movies, setMovies] = useState([]);
-  const handleChange = () => {
+  const navigate = useNavigate();
+  const handleChange = (event:any) => {
     //update searchdata everytime there is a user input/change
     setSearchData(event?.target.value)
     console.log(searchData);
   }
   //  if the user presses "Enter" run a search 
-  const handleKeyDown = () => {
+  const handleKeyDown = (event:any) => {
     if (event.key === 'Enter'){
-    console.log("running Search: ", searchData);
-    setSearchData("");
-
-    const options = {
-      method: 'GET',
-      url: 'https://api.themoviedb.org/3/search/movie',
-      params: {query: searchData, include_adult: 'false', language: 'en-US', page: '1'},
-      headers: {
-        accept: 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4Y2MzZGE2OTVmYTM3MmI3YmU4ZjQxMTAyMGZmYzNkZiIsIm5iZiI6MTcyOTA5NzY1MC4yMTQwNjYsInN1YiI6IjY2ZmQ1NzRhYmFlMzgzYzEwY2QwNzdkYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.IBIAk_bcWwJBT6Q9kB_g1SiJXM5XRF0vBS4IYmakoPk'
-      }
-    };
-    
-    axios
-      .request(options)
-      .then(function (response) {
-        console.log(response.data);
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
+      navigate('/results', { state: { query: searchData } });
+      setSearchData("")
     }
   }
   return (

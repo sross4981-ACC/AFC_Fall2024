@@ -1,25 +1,28 @@
 import './App.css'
-import {useState} from 'react'
 import Bar from './components/Bar'
+import Landing from './components/Landing'
+import Error from './components/Error'
 import NowPlaying from './components/NowPlaying';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import Results from './components/Results'
+import theme from './components/ui/ThemeMovie'
+import { ThemeProvider } from '@mui/material/styles';
 
 function App() {
-  
-  const [page, setPage] = useState(false)
-  const [button, setButton] = useState(true)
-  const handleClick = () => {
-  setPage(true)
-  setButton(false)
-} 
-    
-
+  const {VITE_TMDB_API_TOKEN } = process.env
   return (
     <>
-    <Bar />
-    <nav>
-    {button && <button onClick={handleClick}>Now Playing</button>}
-    {page && <NowPlaying />}
-    </nav>
+    <Router>
+      <ThemeProvider theme={theme}>
+      <Bar />
+        </ThemeProvider>
+      <Routes>
+        <Route path='/' Component={Landing}/>
+        <Route path='/now-playing' element={<NowPlaying />}/>
+        <Route path='/results' element={<Results />}/>
+        <Route path="*" element={<Error />} /> 
+      </Routes>
+    </Router>
     </>
   )
 }

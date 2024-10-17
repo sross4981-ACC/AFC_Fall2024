@@ -4,6 +4,7 @@ import MovieCard from './MovieCard';
 
 
 export default function NowPlaying() {
+const {VITE_TMDB_API_TOKEN } = process.env
 const [nowPlaying, setNowPlaying] = useState([]);
 const handleClick = () => {
 const options = {
@@ -21,8 +22,8 @@ axios
   .then(function (response) {
     setNowPlaying(response.data.results)
     console.log(nowPlaying)
-    let movieArray = response.data.results.map((props:any) => {
-      return <MovieCard movie={props}/>
+    let movieArray = response.data.results.map((cards:any) => {
+      return <MovieCard movie={cards}/>
     })
     setNowPlaying(movieArray)
   })

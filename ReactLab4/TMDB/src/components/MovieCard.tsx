@@ -7,28 +7,36 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import './MovieCards.css'
 import { blue } from '@mui/material/colors';
+import altImage from '../assets/Squiral.jpg'
 
 
-export default function MovieCard(props) {
-  const posterImage = `https://image.tmdb.org/t/p/w200${props.movie.poster_path}`
+export default function MovieCard(cards:any) {
 
+  let posterImage;
+
+  if (cards.movie.poster_path) {
+    posterImage = `https://image.tmdb.org/t/p/w200${cards.movie.poster_path}`;
+  } else {
+    posterImage = altImage; // Fallback to default image
+  }
+  
   return (
     <div id='movie'>
     <Card sx={{ maxWidth: 350, height: 600, backgroundColor: 'dimgrey'}}>
       <CardMedia
         sx={{ height: 300, width: 450}}
         image={posterImage}
-        title={props.movie.title}
+        title={cards.movie.title}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-            {props.movie.title}
+            {cards.movie.title}
         </Typography>
         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-            {props.movie.overview}
+            {cards.movie.overview}
         </Typography>
         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-            Rating: {props.movie.vote_average}
+            Rating: {cards.movie.vote_average}
         </Typography>
       </CardContent>
     </Card>
