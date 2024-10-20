@@ -9,7 +9,6 @@ import theme from './components/ui/ThemeMovie'
 import { ThemeProvider } from '@mui/material/styles';
 
 function App() {
-  const {VITE_TMDB_API_TOKEN } = process.env
   return (
     <>
     <Router>

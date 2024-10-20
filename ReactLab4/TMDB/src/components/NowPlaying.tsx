@@ -1,10 +1,12 @@
 import {useEffect, useState} from 'react'
 import axios from 'axios'
 import MovieCard from './MovieCard';
-
+import { useNavigate } from 'react-router-dom';
 
 export default function NowPlaying() {
-const {VITE_TMDB_API_TOKEN } = process.env
+  const VITE_TMDB_API_TOKEN = import.meta.env.VITE_TMDB_API_TOKEN;
+
+const navigate = useNavigate();
 const [nowPlaying, setNowPlaying] = useState([]);
 const handleClick = () => {
 const options = {
@@ -13,7 +15,7 @@ const options = {
   params: {include_adult: 'false', language: 'en-US', page: '1'},
   headers: {
     accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4Y2MzZGE2OTVmYTM3MmI3YmU4ZjQxMTAyMGZmYzNkZiIsIm5iZiI6MTcyODQwNTY0NC44MjIzMDIsInN1YiI6IjY2ZmQ1NzRhYmFlMzgzYzEwY2QwNzdkYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.2b5UHVQayA3rqs4km48kL6rsG_2jvHjGJQiSFfE96rQ'
+    Authorization: `Bearer ${VITE_TMDB_API_TOKEN}`
   }
 };
 
@@ -29,6 +31,7 @@ axios
   })
   .catch(function (error) {
     console.error(error);
+      navigate('/error')
   });
   
 }

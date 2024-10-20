@@ -67,6 +67,9 @@ export default function Bar() {
       setSearchData("")
     }
   }
+  const handleClick = () => {
+    navigate('/')
+  }
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" sx={{width: '100%'}}>
@@ -86,7 +89,7 @@ export default function Bar() {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            BlockBuster 2: Back in Action
+           <button onClick={handleClick}> BlockBuster 2: Back in Action </button>
           </Typography>
           <Search>
             <SearchIconWrapper>
